@@ -1,4 +1,4 @@
-# PaperMoon Style Guide
+# Developer Documentation Style Guide
 
 This document sets forth the standards and best practices for crafting high-quality technical documentation. It is intended to help you produce clear, consistent, and accessible content. It covers various topics, from writing style and formatting to code examples, images, and more.
 
