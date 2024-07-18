@@ -5,14 +5,14 @@ Before requesting a PR review, please check your work against this list of commo
 Guidance for Grammarly, Screenshots, and Diagrams can be found in the [Docs Standards](https://papermoon.atlassian.net/wiki/spaces/DR/pages/885261/Docs+Standards){target=\_blank}
 
 - [ ] Check your lists
-- [ ] Ensure lists requiring a specific order (step-by-step instructions, etc.) are numbered
-- [ ] Use bullets for lists that can be in any order (list of features, etc.)
-- [ ] Check your formatting for list items - they should look like:
-	- Item name - copy about the item/description
-		- [ ] Item name capitalized
-		- [ ] space, dash, space between item name and description
-		- [ ] the description starts with a lowercase letter
-		- [ ] there is no punctuation at the end of the description
+	- [ ] Ensure lists requiring a specific order (step-by-step instructions, etc.) are numbered
+	- [ ] Use bullets for lists that can be in any order (list of features, etc.)
+	- [ ] Check your formatting for list items - they should look like:
+		- Item name - copy about the item/description
+			- [ ] Item name capitalized
+			- [ ] space, dash, space between item name and description
+			- [ ] the description starts with a lowercase letter
+			- [ ] there is no punctuation at the end of the description
 - [ ] Check your links
 	- [ ] Test all links to ensure they open to the expected content
 	- [ ] Ensure all links are followed by `{target=\_blank}` so they will open in a new tab when selected
