@@ -4,7 +4,7 @@ Before requesting a PR review, please check your work against this list of commo
 
 Guidance for Grammarly, Screenshots, and Diagrams can be found in the [Docs Standards](https://papermoon.atlassian.net/wiki/spaces/DR/pages/885261/Docs+Standards){target=\_blank}
 
-Check your lists
+- [ ] Check your lists
 - [ ] Ensure lists requiring a specific order (step-by-step instructions, etc.) are numbered
 - [ ] Use bullets for lists that can be in any order (list of features, etc.)
 - [ ] Check your formatting for list items - they should look like:
