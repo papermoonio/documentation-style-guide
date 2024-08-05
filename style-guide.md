@@ -13,7 +13,16 @@ The guidelines listed in this document aren't all-inclusive but strive to cover 
   - [Terminology](#terminology)
   - [Punctuation](#punctuation)
   - [Text Formatting](#text-formatting)
-  - [Data Formatting](#data-formatting)
+    - [Bold](#bold)
+    - [Italics](#italics)
+    - [Underline](#underline)
+    - [Symbols](#symbols)
+    - [Numbers](#numbers)
+    - [Quotes](#quotes)
+    - [Capitalization](#capitalization)
+  - [Table Formatting](#table-formatting)
+  - [List Formatting](#list-formatting)
+  - [Links](#links)
 
 - [Code Guidelines](#code-guidelines)
   - [Code Formatting](#code-formatting)
@@ -51,6 +60,7 @@ This section of the document provides guidelines on best practices, language usa
 ### Language
 
 - Avoid possessive language, such as "our," "we," etc., unless writing an informal tutorial
+- Address the reader as _you_
 - In tutorials and guides, where you're instructing a user to act, use an active voice
 - In conceptual documentation, where you're not instructing a user to act, using a passive voice is permitted
 - Be mindful of pronouns. Avoid unnecessarily gendered language
@@ -78,20 +88,65 @@ This section of the document provides guidelines on best practices, language usa
 
 ### Text Formatting
 
-- Use bold formatting for UI elements. In Markdown, put bold elements between double asterisks (`**`)
-- Use italics when drawing attention to a specific word or phrase, for example, when introducing a new term. In Markdown, put italic elements between single underscores (`_`)
-- Use Chicago title-style capitalization for titles and headings, which capitalizes the first word plus all other significant words
+#### Bold
+
+- Put bold elements between double asterisks (`**`)
+- Use bold formatting for:
+  - When referencing UI elements
+  - List items where we're listing out terms with a description. The term will be in bold. See [List Formatting](#list-formatting) for an example
+  - Sparingly can be used to highlight can't-miss, important things
+
+#### Italics
+
+- Put italic elements between single underscores (`_`)
+- Use italics when drawing attention to a specific word or phrase, for example, when introducing a new term
+
+#### Underline
+
 - Do not underline text
+
+#### Symbols
+
 - Do not use emojis
 - Do not use ampersands (`&`) unless referring to a UI element that uses them
-- Spell out numbers as words for numbers zero through nine
-- When referencing file names, put the file name between single backticks <span>(`)</span>
 
-### Data Formatting
+#### Numbers
+
+- Spell out numbers as words for numbers zero through nine
+
+#### Quotes
+
+- Use double quotes in regular text
+- Commas and periods go inside quotation marks
+- Single quotes should only be used in code examples, depending on the guidelines in the [Code Formatting By Language](#code-formatting-by-language) section
+
+#### Capitalization
+
+- Use Chicago title-style capitalization for titles and headings, which capitalizes the first word plus all other significant words
+- Capitalize product names
+- Avoid unnecessary capitalization; before you capitalize a word, think about why and if it should be capitalized
+
+### Table Formatting
 
 - Use tables to represent sets of related pieces of data in a structured way
 - Table headers and values should be centered
 - Tables should be formatted. You can use a tool to format the tables, like the [Markdown Table Formatter VSCode extension](https://marketplace.visualstudio.com/items?itemName=fcrespo82.markdown-table-formatter)
+
+### List Formatting
+
+- Use ordered (numbered) lists for a sequence of steps
+- Use unordered (bulleted) lists for items that are non-sequential and can be read or completed in any order
+- For description lists, use the following formatting: `**term** - description`
+  - Put the term in bold
+  - Use a dash (`-`) between the term and the description
+  - Do not capitalize the first word in the description, unless it's an acronym or product name that should be capitalized
+- Do not add punctuation at the end of each list item
+
+### Links
+
+- Add `{target=\_blank}` to all links, except links to other sections on the same page
+- Use descriptive link text; avoid using "this", "here", and other generic words in the link text
+- Links do not require any in-line formatting, such as bold, italics, or underlining. Depending on the project and the design, links might be underlined, but that will be managed using CSS
 
 ## Code Guidelines
 
