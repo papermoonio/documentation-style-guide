@@ -32,6 +32,7 @@ The guidelines listed in this document aren't all-inclusive but strive to cover 
 
 - [Structure Guidelines](#structure-guidelines)
   - [Repository Structure](#repository-structure)
+    - [Naming Conventions](#naming-conventions) 
   - [Page Structure](#page-structure)
     - [Heading and Titles](#headings-and-titles)
     - [Introductions](#introductions)
@@ -41,6 +42,7 @@ The guidelines listed in this document aren't all-inclusive but strive to cover 
   - [Diagrams](#diagrams)
   - [Screenshots](#screenshots)
   - [Terminal Output](#terminal-output)
+ 
 
 ## Content Guidelines
 
@@ -239,7 +241,15 @@ This section of the document outlines guidelines for repository structure and pa
 - Use a dedicated directory for all snippets (text and code should be separated into respective directories)
 - Use a dedicated directory for all images
 - Directories for images and snippets should mirror the hierarchical structure of the documentation
-- All directory and file names should use kebab-case
+
+#### Naming Conventions
+
+- Use descriptive names that clearly describe the file's purpose or content
+- Keep names short and concise
+- All directory and file names should use kebab-case (e.g., `hello-world.md`)
+- Use lower-case letters in directory and file names
+- Do not use spaces or special characters
+- Always use the correct file extension for the file type (e.g., `.js` for JavaScript, `.py` for Python, `.md` for Markdown)
 
 ### Page Structure
 
