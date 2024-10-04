@@ -303,14 +303,20 @@ This section of the document outlines guidelines for visual aids, such as images
 ### Screenshots
 
 - Screenshots should be at 150% zoom
+- Resolution: Always use **300 DPI**.
+- Use the average size of 1510px width (height variable) for most purposes, ensuring that all elements are clear and sharp.
 - Take screenshots in light or dark mode to match the theme of the documentation site. If your documentation has both light and dark themes available, take screenshots in dark mode
 - To highlight an item on the screenshot, add arrow(s) to the image
 - If more than one arrow is required, they should be numbered, and the document should have an ordered list that aligns with the numbers in the screenshot
 - Arrows should use the same color scheme
 - Arrows should be a consistent size
-- If editing the screenshot in any way, make sure to keep an SVG of the modified image in a directory accessible to the rest of the team
 - All screenshots of the browser should include the entire window, including the address bar
+- If editing the screenshot in any way, make sure to keep an SVG of the modified image in a directory accessible to the rest of the team
 - Images should be `.webp` files
+- Image Placement (Moonbeam - Tanssi):
+  - Upload all image copies to the corresponding Drive folder following the same path as the technical document.
+  - Inside the Drive folder, create a subfolder called `crop` containing the **unedited SVG** version of the image.
+  - Ensure the **edited image** used in the technical document is outside the `crop` folder, resized to the appropriate dimensions.
 
 ### Terminal Output
 
