@@ -20,10 +20,14 @@ Guidance for Grammarly, Screenshots, and Diagrams can be found in the internal D
 		- Recommended -  "You can get DEV tokens for testing on Moonbase Alpha once every 24 hours from the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/){target=\_blank}." 
 		- Not Recommended -  "You can get DEV tokens for testing on Moonbase Alpha [here](url){target=\_blank}."
 - [ ] Check your images
-	- [ ] All browser screenshots should have the browser window in them
-	- [ ] All images should be sized - Width: 756px, Height: variable
-	- [ ] All images should have alt text for accessibility
-		- Example image with alt text - `![Alt text in here](/path/to/image/goes/here)`
+  - [ ] All browser screenshots should have the browser window in them.
+  - [ ] All images should be sized:
+    - Minimum: Width: 756px, Height: variable
+    - Average: Width: 1510px, Height: variable (ensure 300 DPI for clarity)
+  - [ ] All images should have alt text for accessibility.
+    - Example image with alt text - `![Alt text in here](/path/to/image/goes/here)`
+  - [ ] **If working on Moonbeam (Tanssi),** remember to upload the image to the appropriate Drive folder, following the same path as the technical document.  
+    - For more details, see the [Style Guide](/documentation-style-guide/style-guide.md).
 - [ ] Check your code snippets
 	- [ ] Did you use inline code elements (between single backticks) for file names, variable names, function names, or any single line of code that serves as a reference and does not need to be copied?
 	- [ ] Did you use code blocks for multiple lines of code or any code that needs to be copied?
