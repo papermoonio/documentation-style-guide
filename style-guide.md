@@ -143,7 +143,7 @@ This section of the document provides guidelines on best practices, language usa
   - Capitalize the term.
   - Use a colon (`:`) between the term and the description.
   - Capitalize the first word of the description, unless the first word is a code element (e.g., a function name, file name, or variable).
-  - If the description introduces a nested list, restructure the sentence so that only one colon is present—at the end.
+  - If the description introduces a nested list, restructure the sentence so that only one colon is present at the end.
 - Add punctuation at the end of each list item if the item is a full sentence or a complete idea.  
   Example:  
   _You can do any of the following by using the API:_
