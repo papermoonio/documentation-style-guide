@@ -142,7 +142,7 @@ This section of the document provides guidelines on best practices, language usa
   - Put the term in bold.
   - Capitalize the term.
   - Use a colon (`:`) between the term and the description.
-  - Capitalize the first word of the description, unless the first word is a code element (e.g., a function name, file name, or variable).
+  - Use sentence case.
   - If the description introduces a nested list, restructure the sentence so that only one colon is present at the end.
 - Add punctuation at the end of each list item if the item is a full sentence or a complete idea.  
   Example:  
@@ -159,7 +159,7 @@ This section of the document provides guidelines on best practices, language usa
   - Update  
   - Delete
 - Maintain consistent grammar structure across all items in a list (e.g., all items should start with a verb, or all should be noun phrases).
-- For more information about list formatting, refer to the [Google Developer Style Guide on Lists](https://developers.google.com/style/lists#types-of-lists).
+- This section provides only a subset of list formatting guidelines adapted for our documentation. For a complete and detailed reference, see the [Google Developer Style Guide on Lists](https://developers.google.com/style/lists#types-of-lists).
 
 ### Links
 
