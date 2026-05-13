@@ -4,14 +4,18 @@ This document sets forth the standards and best practices for crafting high-qual
 
 The guidelines listed in this document aren't all-inclusive but strive to cover the basics. If this guide does not provide explicit guidance on a particular subject, please default to the [Google developer documentation style guide](https://developers.google.com/style).
 
+> **Authoring with an AI coding agent?** Read [`AGENTS.md`](./AGENTS.md) first. It is the machine-readable companion to this guide and front-loads the rules that LLM-generated output most often violates (list punctuation, bold misuse, em dashes, banned phrases, terminology). The prose guide below remains the source of truth.
+
 ## Table of Contents
 
 - [Content Guidelines](#content-guidelines)
   - [Best Practices](#best-practices)
+    - [Banned Phrases](#banned-phrases)
   - [Language](#language)
   - [Accessibility](#accessibility)
   - [Terminology](#terminology)
   - [Punctuation](#punctuation)
+    - [Em Dash and En Dash](#em-dash-and-en-dash)
   - [Text Formatting](#text-formatting)
     - [Bold](#bold)
     - [Italics](#italics)
@@ -22,11 +26,15 @@ The guidelines listed in this document aren't all-inclusive but strive to cover 
     - [Capitalization](#capitalization)
   - [Table Formatting](#table-formatting)
   - [List Formatting](#list-formatting)
+    - [List Item Punctuation](#list-item-punctuation)
+    - [Description Lists](#description-lists)
   - [Links](#links)
 
 - [Code Guidelines](#code-guidelines)
   - [Code Formatting](#code-formatting)
     - [Code Formatting by Language](#code-formatting-by-language)
+    - [Code Identifiers in Prose](#code-identifiers-in-prose)
+    - [Identifier Consistency Within a Document](#identifier-consistency-within-a-document)
   - [Variable Conventions](#variable-conventions)
   - [Capturing Terminal Output](#capturing-terminal-output)
 
@@ -38,6 +46,7 @@ The guidelines listed in this document aren't all-inclusive but strive to cover 
     - [Introductions](#introductions)
 
 - [Visual Aid Guidelines](#visual-aid-guidelines)
+  - [Image File Naming](#image-file-naming)
   - [Icons](#icons)
   - [Diagrams](#diagrams)
   - [Screenshots](#screenshots)
@@ -54,18 +63,41 @@ This section of the document provides guidelines on best practices, language usa
 - Keep sentences short and to the point. Avoid unnecessary jargon and ambiguity.
 - Maintain a neutral and objective tone. Avoid biases, opinions, or emotional language.
 - Provide context. Avoid assuming the reader already knows what you're talking about.
-- Stick to the facts. Avoid sounding like a sales pitch.
-- Write timeless documentation that doesn't anchor the content to a specific point in time. Avoid using "at the time of writing," "currently," etc.
+- Stick to the facts. Avoid sales-pitch language and filler phrases. See [Banned Phrases](#banned-phrases) for the explicit list.
+- Write timeless documentation that doesn't anchor the content to a specific point in time. Avoid using "at the time of writing," "currently," "as of today," and similar.
 - Use bulleted lists for key points and complex information and to break up walls of text (general readability).
 - Use numbered lists for step-by-step instructions and sequential items.
 
+#### Banned Phrases
+
+The following phrases are not used in PaperMoon documentation. They are filler, marketing copy, or AI-generated cliché. Rewrite or omit when they appear.
+
+| Banned | Use instead |
+|---|---|
+| delve into, dive into | (omit, or "explore", "walk through") |
+| leverage | use |
+| utilize | use |
+| seamless, seamlessly | (omit) |
+| robust | (omit, or be specific: "production-tested", "fault-tolerant") |
+| powerful, cutting-edge, state-of-the-art | (omit) |
+| simply, just, easily, obviously | (omit — never describe a step as easy) |
+| it's important to note that | (omit — state the thing) |
+| it's worth noting that | (omit) |
+| in summary, in conclusion | (omit — structure carries it) |
+| feel free to | (omit) |
+| under the hood | (omit, or "internally") |
+| in today's world, in the modern era | (omit) |
+| currently, at the time of writing | (omit — write timeless docs) |
+| etc. | "and more" or "and so on" |
+
 ### Language
 
-- Avoid possessive language, such as "our," "we," etc., unless writing an informal tutorial.
+- Avoid possessive and first-person plural language, such as "our," "we," and "let's," unless writing an informal tutorial.
 - Address the reader as _you_.
 - In tutorials and guides, where you're instructing a user to act, use an active voice.
 - In conceptual documentation, where you're not instructing a user to act, using a passive voice is permitted.
 - Be mindful of pronouns. Avoid unnecessarily gendered language.
+- Use contractions sparingly. Default to the expanded form (`do not`, `cannot`, `it is`) in reference and conceptual documentation. Contractions are acceptable in informal tutorials.
 
 ### Accessibility
 
@@ -76,27 +108,62 @@ This section of the document provides guidelines on best practices, language usa
 
 ### Terminology
 
-- For token standards, put a dash (`-`) between the standard prefix and the unique identifier for the standard. For example, ERC-20 instead of ERC20.
-- Use JSON-RPC instead of JSON RPC.
-- Use dApp instead of dapp or DApp (except at the beginning of a sentence).
-- Use "and more" or "and so on" instead of "etc."
+| Use | Not |
+|---|---|
+| ERC-20, ERC-721, ERC-1155 | ERC20, ERC 20 |
+| JSON-RPC | JSON RPC, JSONRPC |
+| dApp | dapp, DApp (DApp is acceptable only at the start of a sentence or in a Chicago title-case heading) |
+| TestNet | testnet, test net (unless overridden by a brand-specific guide) |
+| MainNet | mainnet, main net |
+| smart contract | smart-contract (unless used as a compound adjective: `smart-contract platform`) |
+| and more / and so on | etc. |
+
+For token standards generally, put a dash (`-`) between the standard prefix and the unique identifier.
 
 ### Punctuation
 
 - Use Oxford commas.
 - Use colons in lists (instead of dashes).
-- Use periods at the end of a list item. See [List Formatting](#list-formatting) for an example.
+- For list item punctuation, see [List Formatting](#list-formatting).
 - Do not use exclamation marks in formal writing.
+
+#### Em Dash and En Dash
+
+- **Em dash (`—`, U+2014)**: use sparingly to set off a parenthetical aside. Surround with spaces: `text — aside — more text`. At most one em dash per sentence. If a paragraph contains more than one em dash, rewrite using periods or commas.
+- **En dash (`–`, U+2013)**: only for numeric ranges (`2024–2025`, `pages 10–14`).
+- **Hyphen (`-`)**: compound words and identifiers (`ERC-20`, `kebab-case`).
+- Do not substitute two hyphens (`--`) for an em dash. Use the actual `—` character.
+
+Em-dash over-use is a common pattern in AI-generated prose. The pre-publish check is: count the em dashes per paragraph; if more than one, rewrite.
 
 ### Text Formatting
 
 #### Bold
 
 - Put bold elements between double asterisks (`**`).
-- Use bold formatting for:
-  - When referencing UI elements.
-  - List items where we're listing out terms with a description. The term will be in bold. See [List Formatting](#list-formatting) for an example.
-  - Sparingly can be used to highlight can't-miss, important things.
+- Use bold **only** for:
+  - UI element names (button labels, menu items, field names).
+  - The term in a description list: `**Term**: Description.` See [List Formatting](#list-formatting).
+- Do not bold for emphasis in prose. Do not bold whole sentences. If a point needs emphasis, rewrite the sentence so the emphasis comes from word order or word choice.
+
+Do:
+
+```markdown
+Click **Deploy** to publish the contract.
+
+- **Endpoint**: The URL of the JSON-RPC node.
+- **Network**: The chain ID of the target network.
+```
+
+Don't:
+
+```markdown
+This is **really important** — you **must** save your key.
+
+The contract address is **0xabc...123**.
+```
+
+Bold misuse — peppering prose with `**emphasis**` — is a common pattern in AI-generated content. When reviewing, strip bold that isn't either a UI element or a description-list term.
 
 #### Italics
 
@@ -109,12 +176,18 @@ This section of the document provides guidelines on best practices, language usa
 
 #### Symbols
 
-- Do not use emojis.
+- Do not use emojis anywhere in documentation — including in headings, prose, bullet markers, callouts, or DO/DON'T markers. This includes ✅, ❌, 🟢, 🔴, ⚠️, 🚀, and similar decorative glyphs.
+- For DO/DON'T comparisons, use the text labels `Do:` and `Don't:` instead of colored emoji.
 - Do not use ampersands (`&`) unless referring to a UI element that uses them.
 
 #### Numbers
 
-- Spell out numbers as words for numbers zero through nine.
+- Spell out numbers zero through nine in prose. Use digits for 10 and above.
+- Exceptions — always use digits:
+  - Version numbers (`Node.js 18`, `Python 3`).
+  - Measurements and units (`4 GB`, `8 cores`, `2 ms`).
+  - Code and CLI flags (`--max-count 5`).
+  - Inside tables.
 
 #### Quotes
 
@@ -138,34 +211,84 @@ This section of the document provides guidelines on best practices, language usa
 
 - Use ordered (numbered) lists for a sequence of steps.
 - Use unordered (bulleted) lists for items that are non-sequential and can be read or completed in any order.
-- For description lists, use the following formatting: `**Term**: Description.`
-  - Put the term in bold.
-  - Capitalize the term.
-  - Use a colon (`:`) between the term and the description.
-  - Use sentence case.
-  - If the description introduces a nested list, restructure the sentence so that only one colon is present at the end.
-- Add punctuation at the end of each list item if the item is a full sentence or a complete idea.  
-  Example:  
-  _You can do any of the following by using the API:_
-  - Create an item.
-  - Replace one item with another.
-  - Update an item.
-  - Delete an item.
-- Do not add punctuation at the end of list items if the item consists of a single word or a short piece of code.  
-  Example:  
-  _The API supports the following actions:_
-  - Create  
-  - Replace  
-  - Update  
-  - Delete
-- Maintain consistent grammar structure across all items in a list (e.g., all items should start with a verb, or all should be noun phrases).
-- This section provides only a subset of list formatting guidelines adapted for our documentation. For a complete and detailed reference, see the [Google Developer Style Guide on Lists](https://developers.google.com/style/lists#types-of-lists).
+- Maintain consistent grammatical structure across items in a list — all items should start with a verb, or all should be noun phrases.
+
+#### List Item Punctuation
+
+One rule, applied per list:
+
+- If list items are **full sentences or complete thoughts**, end each item with a period.
+- If list items are **single words, short fragments, or code tokens**, omit the period.
+- **All items in the same list must follow the same form.** Never mix punctuated and unpunctuated items in one list.
+
+Do:
+
+_You can do any of the following by using the API:_
+
+- Create an item.
+- Replace one item with another.
+- Update an item.
+- Delete an item.
+
+Do:
+
+_The API supports the following actions:_
+
+- Create
+- Replace
+- Update
+- Delete
+
+Don't (mixed forms in one list):
+
+- Create an item
+- Replace one item with another.
+- Update.
+- Delete an item
+
+#### Description Lists
+
+For description lists, use the format `**Term**: Description.`
+
+- Put the term in bold.
+- Capitalize the term.
+- Use a colon (`:`) between the term and the description.
+- Use sentence case in the description.
+- End the description with a period.
+- If the description introduces a nested list, restructure the sentence so that only one colon is present at the end.
+
+Example:
+
+- **Endpoint**: The URL of the JSON-RPC node.
+- **Network**: The chain ID of the target network.
+
+Do not mix description-list bullets with free-form bullets in the same list. If one item uses `**Term**: Description.`, every item in that list must.
+
+Don't (one item is a description-list bullet; the rest are free-form):
+
+- **Endpoint**: The URL of the JSON-RPC node.
+- The chain ID of the target network
+- Provide an API key in the header
+
+This section provides only a subset of list formatting guidelines adapted for our documentation. For a complete reference, see the [Google Developer Style Guide on Lists](https://developers.google.com/style/lists#types-of-lists).
 
 ### Links
 
-- Add `{target=\_blank}` to all links, except links to other sections on the same page.
-- Use descriptive link text; avoid using "this", "here", and other generic words in the link text.
+- Add `{target=\_blank}` to all external links. Do not add it to links pointing to other sections on the same page.
+- Use descriptive link text. Avoid `this`, `here`, `click here`, `read more`, and `learn more`. If the link points to a specific article, use the title of that article as the link text.
 - Links do not require any in-line formatting, such as bold, italics, or underlining. Depending on the project and the design, links might be underlined, but that will be managed using CSS.
+
+Do:
+
+```markdown
+See the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/){target=\_blank} for test tokens.
+```
+
+Don't:
+
+```markdown
+Get test tokens [here](https://faucet.moonbeam.network/){target=\_blank}.
+```
 
 ## Code Guidelines
 
@@ -183,6 +306,27 @@ This section of the document outlines guidelines for code formatting and convent
   ```py
   ```solidity
   ```
+
+#### Code Identifiers in Prose
+
+Any reference to a code identifier in prose must be wrapped in backticks. This includes:
+
+- Function and method names: `purgeKeys`, `set_keys`.
+- Module, type, and pallet names: `StakingOperator`, `transactionStorage`.
+- Variable and parameter names: `keys`, `proof`.
+- File paths: `runtime/src/lib.rs`.
+
+Do: `The proxy can call session.purgeKeys to release the deposit.` → write as `` The proxy can call `session.purgeKeys` to release the deposit. ``
+
+Don't: leave identifiers as plain words. AI-generated prose often drops backticks on the second or third mention of an identifier — reviewers flag this consistently.
+
+#### Identifier Consistency Within a Document
+
+When you introduce an identifier or term, use the same form everywhere in the same page:
+
+- If you write `purgeKeys` once, do not switch to `purge_keys` later — pick the form used in the source code and keep it.
+- If you describe the role as "staker", do not switch to "validator" or "stash" in the next paragraph unless you have explicitly defined the relationship.
+- Spelling, capitalization, and casing of an identifier or term must be identical on every mention.
 
 #### Code Formatting by Language
 
@@ -203,9 +347,9 @@ This section of the document outlines guidelines for code formatting and convent
 - Root-level variables should be declared at the top of the code example (after any imports but before any functions).
 - Do not use all uppercase letters for variable names unless they are exported constants.
 
-  - 🟢 `export const PRIVATE_KEY = 'INSERT_PRIVATE_KEY';`
-  - 🔴 `const PRIVATE_KEY = 'INSERT_PRIVATE_KEY';`
-  - 🔴 `export const privateKey = 'INSERT_PRIVATE_KEY';`
+  - Do: `export const PRIVATE_KEY = 'INSERT_PRIVATE_KEY';`
+  - Don't: `const PRIVATE_KEY = 'INSERT_PRIVATE_KEY';`
+  - Don't: `export const privateKey = 'INSERT_PRIVATE_KEY';`
 
 - When users need to input personalized information, establish a variable to serve as a placeholder. Ensure that placeholder text adheres to the following conventions:
   - It should describe the variable.
@@ -217,18 +361,18 @@ This section of the document outlines guidelines for code formatting and convent
  
   See the following examples:
 
-    - 🟢 `const address = 'INSERT_CONTRACT_ADDRESS';`
-    - 🟢 `const addresses = ['INSERT_X_ADDRESS', 'INSERT_Y_ADDRESS', 'INSERT_Z_ADDRESS'];`
-    - 🟢 `const amount = INSERT_AMOUNT_TO_SEND;`
-    - 🔴 `const address = 'INSERT-CONTRACT-ADDRESS';`
-    - 🔴 `const address = 'INSERT_CONTRACT_ADDRESS_HERE';`
-    - 🔴 `const privateKey = 'insert_privte_key';`
+    - Do: `const address = 'INSERT_CONTRACT_ADDRESS';`
+    - Do: `const addresses = ['INSERT_X_ADDRESS', 'INSERT_Y_ADDRESS', 'INSERT_Z_ADDRESS'];`
+    - Do: `const amount = INSERT_AMOUNT_TO_SEND;`
+    - Don't: `const address = 'INSERT-CONTRACT-ADDRESS';`
+    - Don't: `const address = 'INSERT_CONTRACT_ADDRESS_HERE';`
+    - Don't: `const privateKey = 'insert_privte_key';`
 
 - If you're creating variables for arguments that need to be passed into a function, use the parameter name as the argument variable name. For example, if you have the following function:
 
   `execute(dest, weight)`
 
-  🟢 You should name the variables after the parameters. For this example, you would use dest and weight:
+  Do — name the variables after the parameters. For this example, use `dest` and `weight`:
   
     ```js
     const dest = 'INSERT_DEST';
@@ -236,12 +380,12 @@ This section of the document outlines guidelines for code formatting and convent
     execute(dest, weight);
     ```
 
-  🔴 This is as opposed to doing something like this:
+  Don't — invent new variable names that don't match the parameters:
   
     ```js
     const xcmDest = 'INSERT_DEST';
     const xcmWeight = 'INSERT_WEIGHT';
-    execute(xcmDest, xcmWeight);    
+    execute(xcmDest, xcmWeight);
     ```
 
 ### Capturing Terminal Output
@@ -284,6 +428,31 @@ This section of the document outlines guidelines for repository structure and pa
 - Use descriptive headings based on the purpose of the section:
    - For task-based content, use a task-based heading (i.e., use "Create an Instance" instead of "Creating an Instance")
    - For a conceptual or non-task-based heading, use a noun phrase that doesn't start with an "-ing" verb (i.e., use "Blockchain Consensus Mechanisms" instead of "Understanding Blockchain Consensus")
+- Do not insert a subheading immediately above a list that is already introduced by a lead-in sentence. If the lead-in is "These are the supported extrinsics:", do not add an extra `###` above the list. Replace the would-be subheading with a single sentence, or drop it entirely.
+
+Don't:
+
+```markdown
+### Supported Extrinsics
+
+The pallet supports the following extrinsics:
+
+#### Extrinsics
+
+- `store`
+- `renew`
+```
+
+Do:
+
+```markdown
+### Supported Extrinsics
+
+The pallet supports the following extrinsics:
+
+- `store`
+- `renew`
+```
 
 #### Introductions
 
@@ -297,6 +466,25 @@ When applicable, introductions should follow this recipe:
 ## Visual Aid Guidelines
 
 This section of the document outlines guidelines for visual aids, such as images and diagrams. It is recommended to create templates for visual aids, such as diagrams and icons, to help promote consistency in style and size.
+
+### Image File Naming
+
+Image files must be named `<topic>-<number>.webp`, where `<topic>` matches the page or section the image belongs to and `<number>` is a zero-padded sequence reflecting the image's order on the page. This convention keeps images stable when pages are reorganized.
+
+Do:
+
+- `key-management-01.webp`
+- `key-management-02.webp`
+- `staking-operator-proxy-01.webp`
+
+Don't:
+
+- `screenshot.webp`
+- `image1.webp`
+- `polkadot-js-apps-rotate-keys.webp` (no sequence number)
+- `Key-Management-01.WEBP` (use kebab-case, lowercase extension)
+
+Image alt text should describe the image in a complete phrase. Do not leave alt text empty.
 
 ### Icons
 

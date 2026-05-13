@@ -1,8 +1,10 @@
 # Documentation Checklist
 
-Before requesting a PR review, please check your work against this list of commonly missed items from the style guide. 
+Before requesting a PR review, please check your work against this list of commonly missed items from the style guide.
 
-Guidance for Grammarly, screenshots, and diagrams can be found on the internal Docs Standards page in the Wiki. 
+If you authored this content with an AI coding agent (Claude Code, Cursor, Codex, etc.), the [`AGENTS.md`](./AGENTS.md) rule set should already be loaded by the agent. Even so, **always run through this checklist before requesting review** — these are the items reviewers most frequently flag.
+
+Guidance for Grammarly, screenshots, and diagrams can be found on the internal Docs Standards page in the Wiki.
 
 - [ ] Check your lists:
     - [ ] Ensure lists requiring a specific order (step-by-step instructions, etc.) are numbered.
@@ -41,3 +43,18 @@ Guidance for Grammarly, screenshots, and diagrams can be found on the internal D
 	- [ ] Use TestNet instead of testnet or test net, unless otherwise specified per brand-specific guidelines.
 - [ ] Check for bold formatting on UI elements:
 	- [ ] **Example**: "Click `**Deploy**` to deploy your smart contract"
+	- [ ] Bold is NOT used for emphasis in prose. If a sentence has `**emphasized**` words, rewrite it.
+- [ ] Check for code identifiers in backticks:
+	- [ ] Every function, method, type, pallet, module, variable, parameter, and file path reference in prose is wrapped in backticks — on the first mention AND every subsequent mention.
+- [ ] Check identifier and term consistency within the page:
+	- [ ] An identifier is spelled the same on every mention (e.g., `purgeKeys` everywhere, not switching to `purge_keys`).
+	- [ ] A role or term is named the same on every mention (e.g., "staker" everywhere, not switching between "staker", "validator", and "stash").
+- [ ] Check image filenames:
+	- [ ] Image files follow `<topic>-<number>.webp` (lowercase kebab-case, sequence-numbered).
+- [ ] Check structure for AI-generated redundancy:
+	- [ ] No subheading sits directly above a list that's already introduced by a lead-in sentence ending in `:`.
+	- [ ] No mixed description-list and free-form bullets in the same list.
+- [ ] Check for AI-generated tells:
+	- [ ] No banned phrases ("delve", "leverage", "seamless", "robust", "it's important to note", "in summary", "feel free to", "currently", "etc.", "simply", "just", "easily").
+	- [ ] At most one em dash per paragraph.
+	- [ ] Address the reader as "you" — no "we", "our", "let's" (except in informal tutorials).
