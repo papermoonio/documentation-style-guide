@@ -116,9 +116,13 @@ The following phrases are not used in PaperMoon documentation. They are filler, 
 | TestNet | testnet, test net (unless overridden by a brand-specific guide) |
 | MainNet | mainnet, main net |
 | smart contract | smart-contract (unless used as a compound adjective: `smart-contract platform`) |
+| supermajority | super majority, super-majority |
 | and more / and so on | etc. |
 
 For token standards generally, put a dash (`-`) between the standard prefix and the unique identifier.
+
+- Define every acronym on first use in each article.
+- Hyphenated identifiers and runtime/network profile names (e.g., `paseo-next`, `westend-next`) keep their canonical casing on every mention. Do not capitalize only the first letter because the identifier starts a sentence — rephrase the sentence so it is not sentence-initial.
 
 ### Punctuation
 
@@ -177,6 +181,7 @@ Bold misuse — peppering prose with `**emphasis**` — is a common pattern in A
 #### Symbols
 
 - Do not use emojis anywhere in documentation — including in headings, prose, bullet markers, callouts, or DO/DON'T markers. This includes ✅, ❌, 🟢, 🔴, ⚠️, 🚀, and similar decorative glyphs.
+- Even outside documentation prose (HTML templates, banners, intentional UI elements), never use the rocket emoji (🚀) for blockchain projects — it reads as speculative hype. Prefer a neutral alternative (📣, 📢) or text only.
 - For DO/DON'T comparisons, use the text labels `Do:` and `Don't:` instead of colored emoji.
 - Do not use ampersands (`&`) unless referring to a UI element that uses them.
 
@@ -219,6 +224,7 @@ One rule, applied per list:
 
 - If list items are **full sentences or complete thoughts**, end each item with a period.
 - If list items are **single words, short fragments, or code tokens**, omit the period.
+- A numbered step label ending in a colon (e.g., `1. Configure the node:`) already counts as punctuated; do not add a trailing period after the colon.
 - **All items in the same list must follow the same form.** Never mix punctuated and unpunctuated items in one list.
 
 Do:

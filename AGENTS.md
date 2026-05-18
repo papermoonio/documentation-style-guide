@@ -26,6 +26,7 @@ One rule, applied per list:
 
 - If list items are **full sentences or complete thoughts**, end each item with a period.
 - If list items are **single words, short fragments, or code tokens**, omit the period.
+- A numbered step label ending in a colon (e.g., `1. Configure the node:`) already counts as punctuated — do not add a trailing period after the colon.
 - **All items in the same list must follow the same form.** Never mix.
 
 Do:
@@ -165,6 +166,7 @@ Don't: `Get test tokens [here](https://faucet.moonbeam.network/){target=\_blank}
 ### 9. Symbols and emojis
 
 - No emojis in documentation prose, headings, or bullet markers. This includes ✅, ❌, 🟢, 🔴, ⚠️, 🚀, and decorative symbols.
+- Even outside documentation prose (HTML templates, banners, UI elements where an emoji is intentional), never use the rocket emoji (🚀) for blockchain projects — it reads as speculative hype. Prefer a neutral alternative (📣, 📢) or text only.
 - Use `Do:` / `Don't:` text labels for DO/DON'T comparisons.
 - No ampersands (`&`) unless they are in a UI element label or code.
 - No exclamation marks.
@@ -189,7 +191,11 @@ Always use these spellings:
 | TestNet | testnet, test net |
 | MainNet | mainnet, main net |
 | smart contract | smart-contract (unless used as an adjective: `smart-contract platform`) |
+| supermajority | super majority, super-majority |
 | and more / and so on | etc. |
+
+- Define every acronym on first use in each article.
+- Hyphenated identifiers and runtime/network profile names (e.g., `paseo-next`, `westend-next`) keep their canonical casing on **every** mention. Never capitalize only the first letter because it starts a sentence — rephrase the sentence so the identifier is not sentence-initial.
 
 ### 12. Variable placeholders in code examples
 
