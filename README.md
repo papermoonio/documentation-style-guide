@@ -4,10 +4,10 @@ This repository contains the PaperMoon style guide, which sets forth the standar
 
 ## Files
 
-- [`style-guide.md`](./style-guide.md) — the prose style guide. This is the source of truth.
-- [`AGENTS.md`](./AGENTS.md) — the machine-readable companion that coding agents (Claude Code, Cursor, Codex, etc.) load automatically when the repo is opened. Front-loads the rules that AI-generated documentation most often violates.
-- [`checklist.md`](./checklist.md) — a human-reviewer checklist for use before requesting a PR review.
-- [`.vale.ini`](./.vale.ini) and [`styles/PaperMoon/`](./styles/PaperMoon/) — a starter [Vale](https://vale.sh) configuration that mechanically enforces the highest-friction rules (banned phrases, terminology, emoji, link text, placeholders). Run `vale .` locally and wire into CI.
+- **[`style-guide.md`](./style-guide.md)**: The prose style guide. This is the source of truth.
+- **[`AGENTS.md`](./AGENTS.md)**: The machine-readable companion that coding agents (Claude Code, Cursor, Codex, etc.) load automatically when the repo is opened. Front-loads the rules that AI-generated documentation most often violates.
+- **[`checklist.md`](./checklist.md)**: A human-reviewer checklist for use before requesting a PR review.
+- **[`.vale.ini`](./.vale.ini) and [`styles/PaperMoon/`](./styles/PaperMoon/)**: A starter [Vale](https://vale.sh) configuration that mechanically enforces the highest-friction rules (banned phrases, terminology, emoji, link text, placeholders). Run `vale .` locally and wire into CI.
 
 ## Using this guide in a downstream docs repo
 

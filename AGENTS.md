@@ -22,12 +22,18 @@ These are the rules that authoring tools (and humans) violate most often. Treat 
 
 ### 1. List item punctuation
 
-One rule, applied per list:
+Follow the [Google developer documentation style guide list rules](https://developers.google.com/style/lists). Summary:
 
-- If list items are **full sentences or complete thoughts**, end each item with a period.
-- If list items are **single words, short fragments, or code tokens**, omit the period.
+- Start each list item with a capital letter, unless case is part of the information (e.g., a glossary of `kebab-case` identifiers).
+- End each list item with a period or other sentence-ending punctuation, **except**:
+  - The item is a single word.
+  - The item does not contain a verb.
+  - The item is entirely in code font.
+  - The item is entirely link text or a document title.
 - A numbered step label ending in a colon (e.g., `1. Configure the node:`) already counts as punctuated — do not add a trailing period after the colon.
-- **All items in the same list must follow the same form.** Never mix.
+- If a list ends up inconsistently punctuated, either rewrite for [parallel construction](https://developers.google.com/style/lists#parallel) or add end punctuation to every item for consistency. **Never mix punctuated and unpunctuated items in the same list.**
+
+For description-list items (`**Term**: Description.`): capitalize the term, capitalize the first letter of the description, and end the description with a period.
 
 Do:
 
@@ -49,7 +55,7 @@ The API supports the following actions:
 - Delete
 ```
 
-Don't:
+Do not:
 
 ```markdown
 - Create an item
@@ -65,7 +71,7 @@ Use bold **only** for:
 - UI element names (button labels, menu items, field names).
 - The term in a description list: `**Term**: Description.`
 
-Do **not** bold for emphasis in prose. Do not bold whole sentences. Do not bold to "draw attention" — write a clearer sentence instead.
+Do not bold for emphasis in prose. Do not bold whole sentences. For emphasis on a specific word or phrase, use italics (single underscores: `_word_`) — see `style-guide.md` for the italics rule. For a stronger callout, use an admonition (`!!! note`, `!!! warning`).
 
 Do:
 
@@ -74,9 +80,11 @@ Click **Deploy** to publish the contract.
 
 - **Endpoint**: The URL of the JSON-RPC node.
 - **Network**: The chain ID of the target network.
+
+Use _italics_ when you need to draw attention to a single word.
 ```
 
-Don't:
+Do not:
 
 ```markdown
 This is **really important** — you **must** save your key.
@@ -93,7 +101,7 @@ Do:
 - `## Deploy a Contract to the Network`
 - `### Connect Your Wallet`
 
-Don't:
+Do not:
 
 - `## Deploy a contract to the network` (sentence case)
 - `## Deploying a Contract to the Network` (`-ing` form for a task heading — use the imperative)
@@ -113,7 +121,7 @@ Exceptions — always use digits:
 - Inside tables.
 
 Do: `Run the command three times.`
-Don't: `Run the command 3 times.`
+Do not: `Run the command 3 times.`
 
 ### 5. Banned words and phrases (AI tells)
 
@@ -155,19 +163,18 @@ Use contractions sparingly. Default to the expanded form (`do not`, `cannot`, `i
 ### 8. Links
 
 - Use descriptive link text. Never use `here`, `this`, `click here`, `read more`, `learn more`.
-- External links: append `{target=\_blank}`.
-- Internal links to the same page: do **not** append `{target=\_blank}`.
 - Do not bold, italicize, or underline links.
+- Opening external links in a new tab is handled automatically by the MkDocs plugin. Do not add `{target=\_blank}` manually.
 
-Do: `See the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/){target=\_blank} for test tokens.`
+Do: `See the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/) for test tokens.`
 
-Don't: `Get test tokens [here](https://faucet.moonbeam.network/){target=\_blank}.`
+Do not: `Get test tokens [here](https://faucet.moonbeam.network/).`
 
 ### 9. Symbols and emojis
 
 - No emojis in documentation prose, headings, or bullet markers. This includes ✅, ❌, 🟢, 🔴, ⚠️, 🚀, and decorative symbols.
 - Even outside documentation prose (HTML templates, banners, UI elements where an emoji is intentional), never use the rocket emoji (🚀) for blockchain projects — it reads as speculative hype. Prefer a neutral alternative (📣, 📢) or text only.
-- Use `Do:` / `Don't:` text labels for DO/DON'T comparisons.
+- Use `Do:` / `Do not:` text labels for DO/DON'T comparisons.
 - No ampersands (`&`) unless they are in a UI element label or code.
 - No exclamation marks.
 
@@ -195,7 +202,8 @@ Always use these spellings:
 | and more / and so on | etc. |
 
 - Define every acronym on first use in each article.
-- Hyphenated identifiers and runtime/network profile names (e.g., `paseo-next`, `westend-next`) keep their canonical casing on **every** mention. Never capitalize only the first letter because it starts a sentence — rephrase the sentence so the identifier is not sentence-initial.
+- When referring to a hyphenated identifier or runtime/network profile **as an identifier** (in a config file, script, or CLI flag), wrap it in backticks and keep its canonical casing on every mention: `paseo-next`, `westend-next`. Never capitalize only the first letter because the identifier starts a sentence — rephrase so it is not sentence-initial.
+- When referring to the same network in prose (not as an identifier), use the prose form in title case without backticks: "Paseo Next", "Westend Next".
 
 ### 12. Variable placeholders in code examples
 
@@ -208,8 +216,8 @@ Placeholders must:
 - Be wrapped in quotes when the value type requires quotes.
 
 Do: `const address = 'INSERT_CONTRACT_ADDRESS';`
-Don't: `const address = 'YOUR_ADDRESS_HERE';`
-Don't: `const address = '<your-address>';`
+Do not: `const address = 'YOUR_ADDRESS_HERE';`
+Do not: `const address = '<your-address>';`
 
 ### 13. Code blocks
 
@@ -234,7 +242,7 @@ Don't: `const address = '<your-address>';`
 Every reference to a function name, method, type, module, pallet, variable, parameter, or file path in prose must be wrapped in backticks.
 
 Do: `` The proxy can call `session.purgeKeys` to release the deposit. ``
-Don't: `The proxy can call session.purgeKeys to release the deposit.`
+Do not: `The proxy can call session.purgeKeys to release the deposit.`
 
 This is a recurring reviewer correction — on the second or third mention of an identifier, AI-generated prose often drops the backticks.
 
@@ -248,15 +256,17 @@ Once you introduce an identifier or term on a page, use the same form throughout
 
 ### 18. Image file naming
 
-Image files use the pattern `<topic>-<number>.webp`:
+Image files use the pattern `<filename>-<number>.webp`:
 
 - `key-management-01.webp`, `key-management-02.webp`
 - Sequence-numbered so reorganizing a page does not break filename meaning.
 - Lowercase kebab-case. Lowercase `.webp` extension.
 
-Don't: `screenshot.webp`, `image1.webp`, descriptive-but-unnumbered names like `polkadot-js-rotate-keys.webp`.
+Do not: `screenshot.webp`, `image1.webp`, descriptive-but-unnumbered names like `polkadot-js-rotate-keys.webp`.
 
-### 19. Don't insert subheadings above lead-in-sentence lists
+**Alt text**: provide non-empty alt text that describes the image for informative images. For purely decorative images (UI screenshots whose information is already in surrounding text, icons, visual-appeal-only images), use empty `alt=""` so assistive technologies skip them. See [Google's alt text guidance](https://developers.google.com/style/images#alt-text).
+
+### 19. Do not insert subheadings above lead-in-sentence lists
 
 If a list is introduced by a sentence ending in `:` ("The following extrinsics are supported:"), do not add an extra heading above it. AI-generated content tends to insert a subheading per list; reviewers strip them.
 
@@ -271,7 +281,7 @@ The pallet supports the following extrinsics:
 - `renew`
 ```
 
-Don't:
+Do not:
 
 ```markdown
 ### Supported Extrinsics
@@ -301,7 +311,7 @@ Mentally scan the draft for each item. Fix any miss.
 - [ ] Single-digit numbers (0–9) spelled out in prose; digits used for versions, units, and code.
 - [ ] At most one em dash per paragraph; en dash used only for ranges.
 - [ ] Address the reader as "you"; no "we" / "our" / "let's".
-- [ ] All external links append `{target=\_blank}`; link text is descriptive (no "here", "this", "click here").
+- [ ] Link text is descriptive (no "here", "this", "click here"). The MkDocs plugin handles `{target=\_blank}` automatically — do not add it manually.
 - [ ] No emojis anywhere — including ✅ / ❌ / 🟢 / 🔴.
 - [ ] Every code block has a language tag.
 - [ ] Placeholders are `INSERT_UPPER_SNAKE_CASE` and describe the value.
@@ -309,7 +319,7 @@ Mentally scan the draft for each item. Fix any miss.
 - [ ] Oxford commas present.
 - [ ] Every code identifier in prose is in backticks — including the second and third mention.
 - [ ] Identifiers and role terms are spelled the same on every mention in the page.
-- [ ] Image files follow `<topic>-<number>.webp`; alt text is non-empty.
+- [ ] Image files follow `<filename>-<number>.webp`; alt text is non-empty for informative images (empty `alt=""` is allowed for purely decorative ones).
 - [ ] No subheading sits directly above a list that already has a lead-in sentence.
 - [ ] Description-list bullets are not mixed with free-form bullets in the same list.
 

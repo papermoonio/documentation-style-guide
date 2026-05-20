@@ -2,7 +2,7 @@
 
 Before requesting a PR review, please check your work against this list of commonly missed items from the style guide.
 
-If you authored this content with an AI coding agent (Claude Code, Cursor, Codex, etc.), the [`AGENTS.md`](./AGENTS.md) rule set should already be loaded by the agent. Even so, **always run through this checklist before requesting review** — these are the items reviewers most frequently flag.
+If you authored this content with an AI coding agent (Claude Code, Cursor, Codex, etc.), the [`AGENTS.md`](./AGENTS.md) rule set should already be loaded by the agent. Even so, _always_ run through this checklist before requesting review — these are the items reviewers most frequently flag.
 
 Guidance for Grammarly, screenshots, and diagrams can be found on the internal Docs Standards page in the Wiki.
 
@@ -16,11 +16,10 @@ Guidance for Grammarly, screenshots, and diagrams can be found on the internal D
 		    - [ ] The description starts with a lowercase letter.
 		    - [ ] Punctuation at the end of the description.
 - [ ] Check your links:
-	- [ ] Ensure all external links are followed by `{target=\_blank}` so they will open in a new tab when selected. For internal links, use your best judgment (i.e., links at the end of the page where we direct users to the next page do not need to open in a new tab).
-		- **Example**: `[Link text](link url){target=\_blank}`
+	- [ ] Opening external links in a new tab is handled automatically by the MkDocs plugin. Do not add `{target=\_blank}` manually.
 	- [ ] Use descriptive and meaningful link text:
-		- **Recommended**: "You can get DEV tokens for testing on Moonbase Alpha once every 24 hours from the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/){target=\_blank}." 
-		- **Not recommended**: "You can get DEV tokens for testing on Moonbase Alpha [here](url){target=\_blank}."
+		- **Recommended**: "You can get DEV tokens for testing on Moonbase Alpha once every 24 hours from the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/)." 
+		- **Not recommended**: "You can get DEV tokens for testing on Moonbase Alpha [here](url)."
 - [ ] Check your images:
   - [ ] All browser screenshots should have the browser window in them, showing the URL.
   - [ ] For full page screenshots, they should have a minimum width of 1510px.
@@ -42,15 +41,15 @@ Guidance for Grammarly, screenshots, and diagrams can be found on the internal D
 	- [ ] Use dApp instead of dapp. DApp is ok at the beginning of a sentence or when capitalizing for a title or heading.
 	- [ ] Use TestNet instead of testnet or test net, unless otherwise specified per brand-specific guidelines.
 - [ ] Check for bold formatting on UI elements:
-	- [ ] **Example**: "Click `**Deploy**` to deploy your smart contract"
-	- [ ] Bold is NOT used for emphasis in prose. If a sentence has `**emphasized**` words, rewrite it.
+	- [ ] Example: "Click `**Deploy**` to deploy your smart contract"
+	- [ ] Bold is not used for emphasis in prose. For emphasis on a specific word or phrase, use italics (`_word_`). For a stronger callout, use an admonition (`!!! note`, `!!! warning`).
 - [ ] Check for code identifiers in backticks:
 	- [ ] Every function, method, type, pallet, module, variable, parameter, and file path reference in prose is wrapped in backticks — on the first mention AND every subsequent mention.
 - [ ] Check identifier and term consistency within the page:
 	- [ ] An identifier is spelled the same on every mention (e.g., `purgeKeys` everywhere, not switching to `purge_keys`).
 	- [ ] A role or term is named the same on every mention (e.g., "staker" everywhere, not switching between "staker", "validator", and "stash").
 - [ ] Check image filenames:
-	- [ ] Image files follow `<topic>-<number>.webp` (lowercase kebab-case, sequence-numbered).
+	- [ ] Image files follow `<filename>-<number>.webp` (lowercase kebab-case, sequence-numbered).
 - [ ] Check structure for AI-generated redundancy:
 	- [ ] No subheading sits directly above a list that's already introduced by a lead-in sentence ending in `:`.
 	- [ ] No mixed description-list and free-form bullets in the same list.

@@ -148,7 +148,7 @@ Em-dash over-use is a common pattern in AI-generated prose. The pre-publish chec
 - Use bold **only** for:
   - UI element names (button labels, menu items, field names).
   - The term in a description list: `**Term**: Description.` See [List Formatting](#list-formatting).
-- Do not bold for emphasis in prose. Do not bold whole sentences. If a point needs emphasis, rewrite the sentence so the emphasis comes from word order or word choice.
+- Do not bold for emphasis in prose. Do not bold whole sentences. For emphasis on a specific word or phrase, use italics (see the [Italics](#italics) section). For a stronger callout, use an admonition (`!!! note`, `!!! warning`).
 
 Do:
 
@@ -157,9 +157,11 @@ Click **Deploy** to publish the contract.
 
 - **Endpoint**: The URL of the JSON-RPC node.
 - **Network**: The chain ID of the target network.
+
+Use _italics_ when you need to draw attention to a single word.
 ```
 
-Don't:
+Do not:
 
 ```markdown
 This is **really important** — you **must** save your key.
@@ -182,7 +184,7 @@ Bold misuse — peppering prose with `**emphasis**` — is a common pattern in A
 
 - Do not use emojis anywhere in documentation — including in headings, prose, bullet markers, callouts, or DO/DON'T markers. This includes ✅, ❌, 🟢, 🔴, ⚠️, 🚀, and similar decorative glyphs.
 - Even outside documentation prose (HTML templates, banners, intentional UI elements), never use the rocket emoji (🚀) for blockchain projects — it reads as speculative hype. Prefer a neutral alternative (📣, 📢) or text only.
-- For DO/DON'T comparisons, use the text labels `Do:` and `Don't:` instead of colored emoji.
+- For DO/DON'T comparisons, use the text labels `Do:` and `Do not:` instead of colored emoji.
 - Do not use ampersands (`&`) unless referring to a UI element that uses them.
 
 #### Numbers
@@ -220,12 +222,16 @@ Bold misuse — peppering prose with `**emphasis**` — is a common pattern in A
 
 #### List Item Punctuation
 
-One rule, applied per list:
+Follow the [Google developer documentation style guide list rules](https://developers.google.com/style/lists). Summary:
 
-- If list items are **full sentences or complete thoughts**, end each item with a period.
-- If list items are **single words, short fragments, or code tokens**, omit the period.
+- Start each list item with a capital letter, unless case is part of the information conveyed (e.g., a list of `kebab-case` identifiers).
+- End each list item with a period or other sentence-ending punctuation, **except**:
+  - The item is a single word.
+  - The item does not contain a verb.
+  - The item is entirely in code font.
+  - The item is entirely link text or a document title.
 - A numbered step label ending in a colon (e.g., `1. Configure the node:`) already counts as punctuated; do not add a trailing period after the colon.
-- **All items in the same list must follow the same form.** Never mix punctuated and unpunctuated items in one list.
+- If a list ends up inconsistently punctuated, either rewrite for [parallel construction](https://developers.google.com/style/lists#parallel) or add end punctuation to every item for consistency. **Never mix punctuated and unpunctuated items in the same list.**
 
 Do:
 
@@ -245,7 +251,7 @@ _The API supports the following actions:_
 - Update
 - Delete
 
-Don't (mixed forms in one list):
+Do not (mixed forms in one list):
 
 - Create an item
 - Replace one item with another.
@@ -259,7 +265,7 @@ For description lists, use the format `**Term**: Description.`
 - Put the term in bold.
 - Capitalize the term.
 - Use a colon (`:`) between the term and the description.
-- Use sentence case in the description.
+- Capitalize the first letter of the description.
 - End the description with a period.
 - If the description introduces a nested list, restructure the sentence so that only one colon is present at the end.
 
@@ -270,7 +276,7 @@ Example:
 
 Do not mix description-list bullets with free-form bullets in the same list. If one item uses `**Term**: Description.`, every item in that list must.
 
-Don't (one item is a description-list bullet; the rest are free-form):
+Do not (one item is a description-list bullet; the rest are free-form):
 
 - **Endpoint**: The URL of the JSON-RPC node.
 - The chain ID of the target network
@@ -280,20 +286,20 @@ This section provides only a subset of list formatting guidelines adapted for ou
 
 ### Links
 
-- Add `{target=\_blank}` to all external links. Do not add it to links pointing to other sections on the same page.
 - Use descriptive link text. Avoid `this`, `here`, `click here`, `read more`, and `learn more`. If the link points to a specific article, use the title of that article as the link text.
 - Links do not require any in-line formatting, such as bold, italics, or underlining. Depending on the project and the design, links might be underlined, but that will be managed using CSS.
+- Opening external links in a new tab is handled automatically by the MkDocs plugin. Do not add `{target=\_blank}` manually.
 
 Do:
 
 ```markdown
-See the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/){target=\_blank} for test tokens.
+See the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/) for test tokens.
 ```
 
-Don't:
+Do not:
 
 ```markdown
-Get test tokens [here](https://faucet.moonbeam.network/){target=\_blank}.
+Get test tokens [here](https://faucet.moonbeam.network/).
 ```
 
 ## Code Guidelines
@@ -324,7 +330,7 @@ Any reference to a code identifier in prose must be wrapped in backticks. This i
 
 Do: `The proxy can call session.purgeKeys to release the deposit.` → write as `` The proxy can call `session.purgeKeys` to release the deposit. ``
 
-Don't: leave identifiers as plain words. AI-generated prose often drops backticks on the second or third mention of an identifier — reviewers flag this consistently.
+Do not: leave identifiers as plain words. AI-generated prose often drops backticks on the second or third mention of an identifier — reviewers flag this consistently.
 
 #### Identifier Consistency Within a Document
 
@@ -354,8 +360,8 @@ When you introduce an identifier or term, use the same form everywhere in the sa
 - Do not use all uppercase letters for variable names unless they are exported constants.
 
   - Do: `export const PRIVATE_KEY = 'INSERT_PRIVATE_KEY';`
-  - Don't: `const PRIVATE_KEY = 'INSERT_PRIVATE_KEY';`
-  - Don't: `export const privateKey = 'INSERT_PRIVATE_KEY';`
+  - Do not: `const PRIVATE_KEY = 'INSERT_PRIVATE_KEY';`
+  - Do not: `export const privateKey = 'INSERT_PRIVATE_KEY';`
 
 - When users need to input personalized information, establish a variable to serve as a placeholder. Ensure that placeholder text adheres to the following conventions:
   - It should describe the variable.
@@ -370,9 +376,9 @@ When you introduce an identifier or term, use the same form everywhere in the sa
     - Do: `const address = 'INSERT_CONTRACT_ADDRESS';`
     - Do: `const addresses = ['INSERT_X_ADDRESS', 'INSERT_Y_ADDRESS', 'INSERT_Z_ADDRESS'];`
     - Do: `const amount = INSERT_AMOUNT_TO_SEND;`
-    - Don't: `const address = 'INSERT-CONTRACT-ADDRESS';`
-    - Don't: `const address = 'INSERT_CONTRACT_ADDRESS_HERE';`
-    - Don't: `const privateKey = 'insert_privte_key';`
+    - Do not: `const address = 'INSERT-CONTRACT-ADDRESS';`
+    - Do not: `const address = 'INSERT_CONTRACT_ADDRESS_HERE';`
+    - Do not: `const privateKey = 'insert_privte_key';`
 
 - If you're creating variables for arguments that need to be passed into a function, use the parameter name as the argument variable name. For example, if you have the following function:
 
@@ -386,7 +392,7 @@ When you introduce an identifier or term, use the same form everywhere in the sa
     execute(dest, weight);
     ```
 
-  Don't — invent new variable names that don't match the parameters:
+  Do not — invent new variable names that do not match the parameters:
   
     ```js
     const xcmDest = 'INSERT_DEST';
@@ -436,7 +442,7 @@ This section of the document outlines guidelines for repository structure and pa
    - For a conceptual or non-task-based heading, use a noun phrase that doesn't start with an "-ing" verb (i.e., use "Blockchain Consensus Mechanisms" instead of "Understanding Blockchain Consensus")
 - Do not insert a subheading immediately above a list that is already introduced by a lead-in sentence. If the lead-in is "These are the supported extrinsics:", do not add an extra `###` above the list. Replace the would-be subheading with a single sentence, or drop it entirely.
 
-Don't:
+Do not:
 
 ```markdown
 ### Supported Extrinsics
@@ -475,7 +481,7 @@ This section of the document outlines guidelines for visual aids, such as images
 
 ### Image File Naming
 
-Image files must be named `<topic>-<number>.webp`, where `<topic>` matches the page or section the image belongs to and `<number>` is a zero-padded sequence reflecting the image's order on the page. This convention keeps images stable when pages are reorganized.
+Image files must be named `<filename>-<number>.webp`, where `<filename>` matches the page or section the image belongs to and `<number>` is a zero-padded sequence reflecting the image's order on the page. This convention keeps images stable when pages are reorganized.
 
 Do:
 
@@ -483,14 +489,14 @@ Do:
 - `key-management-02.webp`
 - `staking-operator-proxy-01.webp`
 
-Don't:
+Do not:
 
 - `screenshot.webp`
 - `image1.webp`
 - `polkadot-js-apps-rotate-keys.webp` (no sequence number)
 - `Key-Management-01.WEBP` (use kebab-case, lowercase extension)
 
-Image alt text should describe the image in a complete phrase. Do not leave alt text empty.
+Image alt text should describe the image in a complete phrase for informative images. For purely decorative images — UI screenshots whose information is already in surrounding text, icons used for visual interest, or images that are not informative on their own — use empty `alt=""` so assistive technologies skip them. See [Google's alt text guidance](https://developers.google.com/style/images#alt-text).
 
 ### Icons
 
