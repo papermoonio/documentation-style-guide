@@ -122,7 +122,7 @@ The following phrases are not used in PaperMoon documentation. They are filler, 
 For token standards generally, put a dash (`-`) between the standard prefix and the unique identifier.
 
 - Define every acronym on first use in each article.
-- Hyphenated identifiers and runtime/network profile names (e.g., `paseo-next`, `westend-next`) keep their canonical casing on every mention. Do not capitalize only the first letter because the identifier starts a sentence — rephrase the sentence so it is not sentence-initial.
+- Hyphenated identifiers (config flags, release profiles, CLI options, package names) keep their canonical casing on every mention. Do not capitalize only the first letter because the identifier starts a sentence — rephrase the sentence so it is not sentence-initial.
 
 ### Punctuation
 
@@ -293,13 +293,13 @@ This section provides only a subset of list formatting guidelines adapted for ou
 Do:
 
 ```markdown
-See the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/) for test tokens.
+See the [project's faucet](https://example.com/faucet/) for test tokens.
 ```
 
 Do not:
 
 ```markdown
-Get test tokens [here](https://faucet.moonbeam.network/).
+Get test tokens [here](https://example.com/faucet/).
 ```
 
 ## Code Guidelines
@@ -323,12 +323,12 @@ This section of the document outlines guidelines for code formatting and convent
 
 Any reference to a code identifier in prose must be wrapped in backticks. This includes:
 
-- Function and method names: `purgeKeys`, `set_keys`.
-- Module, type, and pallet names: `StakingOperator`, `transactionStorage`.
-- Variable and parameter names: `keys`, `proof`.
-- File paths: `runtime/src/lib.rs`.
+- Function and method names: `getUserId`, `get_user_id`.
+- Module, type, and class names: `RoleManager`, `tokenStorage`.
+- Variable and parameter names: `userId`, `payload`.
+- File paths: `src/lib/auth.ts`.
 
-Do: `The proxy can call session.purgeKeys to release the deposit.` → write as `` The proxy can call `session.purgeKeys` to release the deposit. ``
+Do: `The handler invokes auth.getUserId to resolve the caller.` → write as `` The handler invokes `auth.getUserId` to resolve the caller. ``
 
 Do not: leave identifiers as plain words. AI-generated prose often drops backticks on the second or third mention of an identifier — reviewers flag this consistently.
 
@@ -336,8 +336,8 @@ Do not: leave identifiers as plain words. AI-generated prose often drops backtic
 
 When you introduce an identifier or term, use the same form everywhere in the same page:
 
-- If you write `purgeKeys` once, do not switch to `purge_keys` later — pick the form used in the source code and keep it.
-- If you describe the role as "staker", do not switch to "validator" or "stash" in the next paragraph unless you have explicitly defined the relationship.
+- If you write `getUserId` once, do not switch to `get_user_id` later — pick the form used in the source code and keep it.
+- If you describe the role as "author", do not switch to "editor" or "writer" in the next paragraph unless those roles are distinct on this page.
 - Spelling, capitalization, and casing of an identifier or term must be identical on every mention.
 
 #### Code Formatting by Language
@@ -485,16 +485,16 @@ Image files must be named `<filename>-<number>.webp`, where `<filename>` matches
 
 Do:
 
-- `key-management-01.webp`
-- `key-management-02.webp`
-- `staking-operator-proxy-01.webp`
+- `dashboard-overview-01.webp`
+- `dashboard-overview-02.webp`
+- `user-permissions-01.webp`
 
 Do not:
 
 - `screenshot.webp`
 - `image1.webp`
-- `polkadot-js-apps-rotate-keys.webp` (no sequence number)
-- `Key-Management-01.WEBP` (use kebab-case, lowercase extension)
+- `dashboard-overview-final.webp` (no sequence number)
+- `Dashboard-Overview-01.WEBP` (use kebab-case, lowercase extension)
 
 Image alt text should describe the image in a complete phrase for informative images. For purely decorative images — UI screenshots whose information is already in surrounding text, icons used for visual interest, or images that are not informative on their own — use empty `alt=""` so assistive technologies skip them. See [Google's alt text guidance](https://developers.google.com/style/images#alt-text).
 

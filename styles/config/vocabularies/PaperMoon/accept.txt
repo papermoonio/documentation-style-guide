@@ -5,15 +5,6 @@ TestNets
 MainNet
 MainNets
 PaperMoon
-Polkadot
-Kusama
-Moonbeam
-Moonriver
-Moonbase
-parachain
-parachains
-relay chain
-Substrate
 JSON-RPC
 Web3
 EVM

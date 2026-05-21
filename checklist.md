@@ -18,8 +18,8 @@ Guidance for Grammarly, screenshots, and diagrams can be found on the internal D
 - [ ] Check your links:
 	- [ ] Opening external links in a new tab is handled automatically by the MkDocs plugin. Do not add `{target=\_blank}` manually.
 	- [ ] Use descriptive and meaningful link text:
-		- **Recommended**: "You can get DEV tokens for testing on Moonbase Alpha once every 24 hours from the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/)." 
-		- **Not recommended**: "You can get DEV tokens for testing on Moonbase Alpha [here](url)."
+		- **Recommended**: "You can get test tokens once every 24 hours from the [project's faucet](https://example.com/faucet/)." 
+		- **Not recommended**: "You can get test tokens from the project's faucet [here](url)."
 - [ ] Check your images:
   - [ ] All browser screenshots should have the browser window in them, showing the URL.
   - [ ] For full page screenshots, they should have a minimum width of 1510px.
@@ -46,8 +46,8 @@ Guidance for Grammarly, screenshots, and diagrams can be found on the internal D
 - [ ] Check for code identifiers in backticks:
 	- [ ] Every function, method, type, pallet, module, variable, parameter, and file path reference in prose is wrapped in backticks — on the first mention AND every subsequent mention.
 - [ ] Check identifier and term consistency within the page:
-	- [ ] An identifier is spelled the same on every mention (e.g., `purgeKeys` everywhere, not switching to `purge_keys`).
-	- [ ] A role or term is named the same on every mention (e.g., "staker" everywhere, not switching between "staker", "validator", and "stash").
+	- [ ] An identifier is spelled the same on every mention (e.g., `getUserId` everywhere, not switching to `get_user_id`).
+	- [ ] A role or term is named the same on every mention (e.g., "author" everywhere, not switching between "author", "editor", and "writer" unless those roles are distinct on this page).
 - [ ] Check image filenames:
 	- [ ] Image files follow `<filename>-<number>.webp` (lowercase kebab-case, sequence-numbered).
 - [ ] Check structure for AI-generated redundancy:

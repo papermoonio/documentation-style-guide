@@ -166,9 +166,9 @@ Use contractions sparingly. Default to the expanded form (`do not`, `cannot`, `i
 - Do not bold, italicize, or underline links.
 - Opening external links in a new tab is handled automatically by the MkDocs plugin. Do not add `{target=\_blank}` manually.
 
-Do: `See the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/) for test tokens.`
+Do: `See the [project's faucet](https://example.com/faucet/) for test tokens.`
 
-Do not: `Get test tokens [here](https://faucet.moonbeam.network/).`
+Do not: `Get test tokens [here](https://example.com/faucet/).`
 
 ### 9. Symbols and emojis
 
@@ -202,8 +202,8 @@ Always use these spellings:
 | and more / and so on | etc. |
 
 - Define every acronym on first use in each article.
-- When referring to a hyphenated identifier or runtime/network profile **as an identifier** (in a config file, script, or CLI flag), wrap it in backticks and keep its canonical casing on every mention: `paseo-next`, `westend-next`. Never capitalize only the first letter because the identifier starts a sentence — rephrase so it is not sentence-initial.
-- When referring to the same network in prose (not as an identifier), use the prose form in title case without backticks: "Paseo Next", "Westend Next".
+- When referring to a hyphenated identifier (a config flag, release profile, CLI option, package name) **as an identifier**, wrap it in backticks and keep its canonical casing on every mention. Never capitalize only the first letter because the identifier starts a sentence — rephrase so it is not sentence-initial.
+- When referring to the same thing by its prose name (not as an identifier), use the project's official title-case form without backticks.
 
 ### 12. Variable placeholders in code examples
 
@@ -233,7 +233,7 @@ Do not: `const address = '<your-address>';`
 
 ### 15. Punctuation
 
-- Oxford comma, always: `Polkadot, Kusama, and Moonbeam`.
+- Oxford comma, always: `red, white, and blue`.
 - Use colons (not dashes) to introduce lists.
 - No exclamation marks.
 
@@ -241,8 +241,8 @@ Do not: `const address = '<your-address>';`
 
 Every reference to a function name, method, type, module, pallet, variable, parameter, or file path in prose must be wrapped in backticks.
 
-Do: `` The proxy can call `session.purgeKeys` to release the deposit. ``
-Do not: `The proxy can call session.purgeKeys to release the deposit.`
+Do: `` The handler invokes `auth.getUserId` to resolve the caller. ``
+Do not: `The handler invokes auth.getUserId to resolve the caller.`
 
 This is a recurring reviewer correction — on the second or third mention of an identifier, AI-generated prose often drops the backticks.
 
@@ -250,19 +250,19 @@ This is a recurring reviewer correction — on the second or third mention of an
 
 Once you introduce an identifier or term on a page, use the same form throughout that page:
 
-- Pick one casing for an identifier and keep it (`purgeKeys` everywhere, not `purgeKeys` then `purge_keys`).
-- Pick one term for a role and keep it ("staker" everywhere, not "staker" then "validator" then "stash").
-- Match what's in the source code or schema. If the code says `purgeKeys`, the docs say `purgeKeys`.
+- Pick one casing for an identifier and keep it (e.g., `getUserId` everywhere, not `getUserId` then `get_user_id`).
+- Pick one term for a role and keep it ("author" everywhere, not "author" then "editor" then "writer" unless those roles are distinct on this page).
+- Match what's in the source code or schema. If the code says `getUserId`, the docs say `getUserId`.
 
 ### 18. Image file naming
 
 Image files use the pattern `<filename>-<number>.webp`:
 
-- `key-management-01.webp`, `key-management-02.webp`
+- `dashboard-overview-01.webp`, `dashboard-overview-02.webp`
 - Sequence-numbered so reorganizing a page does not break filename meaning.
 - Lowercase kebab-case. Lowercase `.webp` extension.
 
-Do not: `screenshot.webp`, `image1.webp`, descriptive-but-unnumbered names like `polkadot-js-rotate-keys.webp`.
+Do not: `screenshot.webp`, `image1.webp`, descriptive-but-unnumbered names like `dashboard-overview-final.webp`.
 
 **Alt text**: provide non-empty alt text that describes the image for informative images. For purely decorative images (UI screenshots whose information is already in surrounding text, icons, visual-appeal-only images), use empty `alt=""` so assistive technologies skip them. See [Google's alt text guidance](https://developers.google.com/style/images#alt-text).
 
