@@ -16,7 +16,6 @@ Guidance for Grammarly, screenshots, and diagrams can be found on the internal D
 		    - [ ] The description starts with a lowercase letter.
 		    - [ ] Punctuation at the end of the description.
 - [ ] Check your links:
-	- [ ] Opening external links in a new tab is handled automatically by the MkDocs plugin. Do not add `{target=\_blank}` manually.
 	- [ ] Use descriptive and meaningful link text:
 		- **Recommended**: "You can get test tokens once every 24 hours from the [project's faucet](https://example.com/faucet/)." 
 		- **Not recommended**: "You can get test tokens from the project's faucet [here](url)."

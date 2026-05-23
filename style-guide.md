@@ -288,7 +288,6 @@ This section provides only a subset of list formatting guidelines adapted for ou
 
 - Use descriptive link text. Avoid `this`, `here`, `click here`, `read more`, and `learn more`. If the link points to a specific article, use the title of that article as the link text.
 - Links do not require any in-line formatting, such as bold, italics, or underlining. Depending on the project and the design, links might be underlined, but that will be managed using CSS.
-- Opening external links in a new tab is handled automatically by the MkDocs plugin. Do not add `{target=\_blank}` manually.
 
 Do:
 

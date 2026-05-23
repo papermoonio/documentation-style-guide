@@ -164,7 +164,6 @@ Use contractions sparingly. Default to the expanded form (`do not`, `cannot`, `i
 
 - Use descriptive link text. Never use `here`, `this`, `click here`, `read more`, `learn more`.
 - Do not bold, italicize, or underline links.
-- Opening external links in a new tab is handled automatically by the MkDocs plugin. Do not add `{target=\_blank}` manually.
 
 Do: `See the [project's faucet](https://example.com/faucet/) for test tokens.`
 
@@ -311,7 +310,7 @@ Mentally scan the draft for each item. Fix any miss.
 - [ ] Single-digit numbers (0–9) spelled out in prose; digits used for versions, units, and code.
 - [ ] At most one em dash per paragraph; en dash used only for ranges.
 - [ ] Address the reader as "you"; no "we" / "our" / "let's".
-- [ ] Link text is descriptive (no "here", "this", "click here"). The MkDocs plugin handles `{target=\_blank}` automatically — do not add it manually.
+- [ ] Link text is descriptive (no "here", "this", "click here").
 - [ ] No emojis anywhere — including ✅ / ❌ / 🟢 / 🔴.
 - [ ] Every code block has a language tag.
 - [ ] Placeholders are `INSERT_UPPER_SNAKE_CASE` and describe the value.
