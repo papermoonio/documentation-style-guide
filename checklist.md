@@ -1,8 +1,10 @@
 # Documentation Checklist
 
-Before requesting a PR review, please check your work against this list of commonly missed items from the style guide. 
+Before requesting a PR review, please check your work against this list of commonly missed items from the style guide.
 
-Guidance for Grammarly, screenshots, and diagrams can be found on the internal Docs Standards page in the Wiki. 
+If you authored this content with an AI coding agent (Claude Code, Cursor, Codex, etc.), the [`AGENTS.md`](./AGENTS.md) rule set should already be loaded by the agent. Even so, _always_ run through this checklist before requesting review — these are the items reviewers most frequently flag.
+
+Guidance for Grammarly, screenshots, and diagrams can be found on the internal Docs Standards page in the Wiki.
 
 - [ ] Check your lists:
     - [ ] Ensure lists requiring a specific order (step-by-step instructions, etc.) are numbered.
@@ -14,11 +16,9 @@ Guidance for Grammarly, screenshots, and diagrams can be found on the internal D
 		    - [ ] The description starts with a lowercase letter.
 		    - [ ] Punctuation at the end of the description.
 - [ ] Check your links:
-	- [ ] Ensure all external links are followed by `{target=\_blank}` so they will open in a new tab when selected. For internal links, use your best judgment (i.e., links at the end of the page where we direct users to the next page do not need to open in a new tab).
-		- **Example**: `[Link text](link url){target=\_blank}`
 	- [ ] Use descriptive and meaningful link text:
-		- **Recommended**: "You can get DEV tokens for testing on Moonbase Alpha once every 24 hours from the [Moonbase Alpha Faucet](https://faucet.moonbeam.network/){target=\_blank}." 
-		- **Not recommended**: "You can get DEV tokens for testing on Moonbase Alpha [here](url){target=\_blank}."
+		- **Recommended**: "You can get test tokens once every 24 hours from the [project's faucet](https://example.com/faucet/)." 
+		- **Not recommended**: "You can get test tokens from the project's faucet [here](url)."
 - [ ] Check your images:
   - [ ] All browser screenshots should have the browser window in them, showing the URL.
   - [ ] For full page screenshots, they should have a minimum width of 1510px.
@@ -40,4 +40,19 @@ Guidance for Grammarly, screenshots, and diagrams can be found on the internal D
 	- [ ] Use dApp instead of dapp. DApp is ok at the beginning of a sentence or when capitalizing for a title or heading.
 	- [ ] Use TestNet instead of testnet or test net, unless otherwise specified per brand-specific guidelines.
 - [ ] Check for bold formatting on UI elements:
-	- [ ] **Example**: "Click `**Deploy**` to deploy your smart contract"
+	- [ ] Example: "Click `**Deploy**` to deploy your smart contract"
+	- [ ] Bold is not used for emphasis in prose. For emphasis on a specific word or phrase, use italics (`_word_`). For a stronger callout, use an admonition (`!!! note`, `!!! warning`).
+- [ ] Check for code identifiers in backticks:
+	- [ ] Every function, method, type, pallet, module, variable, parameter, and file path reference in prose is wrapped in backticks — on the first mention AND every subsequent mention.
+- [ ] Check identifier and term consistency within the page:
+	- [ ] An identifier is spelled the same on every mention (e.g., `getUserId` everywhere, not switching to `get_user_id`).
+	- [ ] A role or term is named the same on every mention (e.g., "author" everywhere, not switching between "author", "editor", and "writer" unless those roles are distinct on this page).
+- [ ] Check image filenames:
+	- [ ] Image files follow `<filename>-<number>.webp` (lowercase kebab-case, sequence-numbered).
+- [ ] Check structure for AI-generated redundancy:
+	- [ ] No subheading sits directly above a list that's already introduced by a lead-in sentence ending in `:`.
+	- [ ] No mixed description-list and free-form bullets in the same list.
+- [ ] Check for AI-generated tells:
+	- [ ] No banned phrases ("delve", "leverage", "seamless", "robust", "it's important to note", "in summary", "feel free to", "currently", "etc.", "simply", "just", "easily").
+	- [ ] At most one em dash per paragraph.
+	- [ ] Address the reader as "you" — no "we", "our", "let's" (except in informal tutorials).
